@@ -1,3 +1,51 @@
 body {
     padding-top: 5rem;
 }
+
+.container_view{
+    display:flex;
+    flex-wrap: wrap;
+  }
+
+  .grid_view{
+      margin: 5px;
+  }
+
+  
+  
+   .type{
+    background: #d5ec07;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+    -webkit-box-decoration-break: clone;
+    -moz-background-inline-policy: clone;
+    box-decoration-break: clone;
+  }
+
+  .price{
+    background: #1b57fc;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+    -webkit-box-decoration-break: clone;
+    -moz-background-inline-policy: clone;
+    box-decoration-break: clone;
+  }
+
+  .p2 {
+     font-weight:bold;   
+
+  }
+
+  #card, #pgheader{
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+  }
+
+  #pgheader{
+    text-align: center;
+  }

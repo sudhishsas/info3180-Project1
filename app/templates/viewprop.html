@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 class="page-header"></h1>
+
+    
+        <div class="card flex-row" >
+            {% set photo = rootdiri ~ view_prop.photo_name %}
+            
+            <img class=class="card-img-sm-left" src="{{ url_for('static',filename = photo) }}" alt="Card image" width="470" height="490">
+              
+            <div class="card-body">
+            <h5  class="card-title"> <i class="fa-solid fa-folder-open"></i> {{ view_prop.title }}</h5>
+            <div class="d-flex justify-content-start"><span class = "price"><h6> <i class="fa-solid fa-money-check-dollar"></i> {{ '$'~view_prop.price }}</h6></span> <span class = "type"><h6>{{ view_prop.type }}</h6></span></div>
+
+            <p class="card-text"></p>
+        
+            <p>{{ view_prop.text }}</p>
+        
+            <div class="d-flex justify-content-start"><span class = "bed"><h6> <i class="fa-solid fa-bed"></i> {{ view_prop.num_bed }} Bedrooms</h6></span> <span class = "bath"><h6> <i class="fa-solid fa-bath"></i> {{ view_prop.num_bath }} Bathrooms</h6></span></div>
+            <br>
+            <h6> <i class="fa-solid fa-location-dot"></i> {{ view_prop.location }}</h6>
+            
+            <a href="#" class="btn btn-primary">Email Realtor</a>
+            </div>
+        </div>
+      
+{% endblock %}

@@ -10,17 +10,20 @@ class PropertiesProfie(db.Model):
     num_bath = db.Column(db.Integer,nullable=False)
     num_bed = db.Column(db.Integer,nullable=False)
     price = db.Column(db.Integer,nullable=False)
-    photo= db.Column(db.String(200),nullable=False)
-    type = db.Column(db.String(15),nullable=False)
+    #photo= db.Column(db.LargeBinary,unique=True,nullable=False)
+    photo_name= db.Column(db.Text,nullable=False)
+    type = db.Column(db.String(15))
+    text = db.Column(db.String(800))
 
 
-    def __init__(self, type ,id, title, location, num_bath, num_bed, price,photo):
+    def __init__(self, type ,title,photo_name, location, num_bath, num_bed, price,text):
         self.title = title 
         self.location = location
         self.num_bath = num_bath
         self.num_bed = num_bed
         self.price = price  
-        self.id = id
-        self.photo = photo
+        #self.photo = photo
         self.type = type
+        self.photo_name = photo_name
+        self.text = text
 
