@@ -7,7 +7,7 @@ This file creates your application.
 from operator import length_hint
 import os
 from app import app, db
-from flask import render_template, request, redirect, url_for,flash,send_from_directory 
+from flask import render_template, request, redirect, url_for, flash ,send_from_directory 
 from .models import PropertiesProfie
 from .form import PropertyForm
 from werkzeug.utils import secure_filename
@@ -56,9 +56,10 @@ def create():
         db.session.add(propinfo)
         db. session.commit()
 
-        #flash('Successfully added a new property','success')
+        #flash('Successfully added a new property.','success')
         return redirect(url_for('home'))
-
+    else:
+        flash('ERROR did not add property','danger')
     flash_errors(myform)
     return render_template('create.html', form = myform)
 
