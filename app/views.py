@@ -56,7 +56,7 @@ def create():
         db.session.add(propinfo)
         db. session.commit()
 
-        #flash('Successfully added a new property.','success')
+        flash('Successfully added a new property.','success')
         return redirect(url_for('home'))
     else:
         flash('ERROR did not add property','danger')
