@@ -16,11 +16,14 @@
             <p class="card-text"></p>
         
             <p>{{ view_prop.text }}</p>
-        
-            <div class="d-flex justify-content-start"><span class = "bed"><h6> <i class="fa-solid fa-bed"></i> {{ view_prop.num_bed }} Bedrooms</h6></span> <span class = "bath"><h6> <i class="fa-solid fa-bath"></i> {{ view_prop.num_bath }} Bathrooms</h6></span></div>
             <br>
-            <h6> <i class="fa-solid fa-location-dot"></i> {{ view_prop.location }}</h6>
+            <div class = "d-flex flex-row bd-highlight mb-3">
+                <div class="p-2 bd-highlight"><span class = "bed"><h6> <i class="fa-solid fa-bed"></i> {{ view_prop.num_bed }} Bedrooms</div></h6></span>
+                <div class="p-2 bd-highlight"> <span class = "bath"><h6> <i class="fa-solid fa-bath"></i> {{ view_prop.num_bath }} Bathrooms</h6></span></div>
+            </div>
             
+            <h6> <i class="fa-solid fa-location-dot"></i> {{ view_prop.location }}</h6>
+            <br>
             <a href="#" class="btn btn-primary">Email Realtor</a>
             </div>
         </div>
