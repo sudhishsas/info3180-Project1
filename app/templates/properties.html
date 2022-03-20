@@ -2,11 +2,12 @@
 
 {% block main %}
 <h1 class="page-header">Properties</h1>
+{% include 'flash_messages.html' %}
 <div class="container_view">
     {% for info in prop %}
         <div class = "grid_view">
-        <div class="card text-center" style="width: 18rem;">
-            {% set photo = rootdiri ~ info.photo_name %}
+        <div class="card text-left" style="width: 18rem;">
+            {% set photo = subdiri ~ info.photo_name %}
             <img class="card-img-top" src="{{ url_for('static',filename = photo) }}" alt="Card image" width="250" height="200">
             <div class="card-body">
             <h5 class="card-title">{{ info.title }}</h5>
@@ -15,10 +16,12 @@
             <div class="card-body">
                 {{ info.location }}
                 <br>
-                {{ info.price }}
+                <div class="d-flex justify-content-start"><span class = "price"><h6> <i class="fa-solid fa-money-check-dollar"></i> {{ '$'~info.price }}</h6></span></div>
             </div>   
             <div class="card-body">
-            <a href="{{ url_for('viewprop',id=info.id) }}" class="btn btn-primary">View Property</a>
+                <div class="d-grid gap-2">
+                    <button href="{{ url_for('viewprop',id=info.id) }}" class="block">View Property</button>
+                </div>
             </div>
         </div>
     </div> 

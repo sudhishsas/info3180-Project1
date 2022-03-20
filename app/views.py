@@ -57,7 +57,7 @@ def create():
         db. session.commit()
 
         flash('Successfully added a new property.','success')
-        return redirect(url_for('home'))
+        return redirect(url_for('showprop'))
     else:
         flash('ERROR did not add property','danger')
     flash_errors(myform)
@@ -68,9 +68,10 @@ def showprop():
     
     filename = get_uploaded_images()
     if get_prop_info() != []:
-        rootdir = 'uploads/'
+        subdir = 'uploads/'
         lenght =length_hint(get_prop_info())
-        return render_template('properties.html', filenames= filename , prop = get_prop_info() ,rootdiri = rootdir,len = lenght)
+            
+        return render_template('properties.html', filenames= filename , prop = get_prop_info() ,subdiri = subdir,len = lenght)
     else: 
         flash("database is empty no properties to show", 'danger')
         return redirect('properties.html')
@@ -92,10 +93,11 @@ def get_image(filename):
 
 def get_uploaded_images():
     rootdir = os.getcwd()
+    print("this is root" ,rootdir)
     file_store=[]
     for subdir, dirs, files in os.walk('app/static/uploads'):
         for file in files:
-            file_store.append(os.path.join(rootdir,subdir, file))
+            file_store.append(os.path.join(subdir, file))
     return file_store
 
 def get_prop_info():
