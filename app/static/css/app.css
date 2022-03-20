@@ -50,7 +50,7 @@ body {
     text-align: center;
   }
 
-  .block {
+  #btn  {
     display: block;
     width: fill;
     border: none;
@@ -62,9 +62,7 @@ body {
     text-align: center;
     position:static;
   }
-  button{
-    width:fill;
-  }
+  
   .block:hover {
     background-color: #ddd;
     color: black;
