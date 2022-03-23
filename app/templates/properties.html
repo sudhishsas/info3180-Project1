@@ -7,8 +7,12 @@
     {% for info in prop %}
         <div class = "grid_view">
         <div class="card text-left" style="width: 18rem;">
+            <!-- tetsinf perposes -->
             {% set photo = subdiri ~ info.photo_name %}
-            <img class="card-img-top" src="{{ url_for('static',filename = photo) }}" alt="Card image" width="250" height="200">
+            
+            <img class="card-img-top" src="{{ url_for('get_image',filename = info.photo_name) }}" alt="Card image" width="250" height="200">
+            <!-- testing perposes 
+                <img class="card-img-top" src="{{ url_for('static',filename = photo) }}" alt="Card image" width="250" height="200"> -->
             <div class="card-body">
             <h5 class="card-title">{{ info.title }}</h5>
             <p class="card-text"></p>

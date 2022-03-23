@@ -70,7 +70,7 @@ def showprop():
     if get_prop_info() != []:
         subdir = 'uploads/'
         lenght =length_hint(get_prop_info())
-            
+        
         return render_template('properties.html', filenames= filename , prop = get_prop_info() ,subdiri = subdir,len = lenght)
     else: 
         flash("database is empty no properties to show", 'danger')
